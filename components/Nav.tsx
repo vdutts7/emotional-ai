@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { Button } from "./ui/button";
 import { Moon, Sun, Brain, Heart, Smile, Frown } from "lucide-react";
 import Github from "./logos/GitHub";
+import pkg from '@/package.json';
 
 const icons = [Brain, Heart, Smile, Frown];
 
