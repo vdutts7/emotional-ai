@@ -1,8 +1,5 @@
 <div align="center">
 
-  <img src="https://res.cloudinary.com/dnz16usmk/image/upload/f_auto,q_auto/v1/vd7-website/gpt4v-logo" alt="Logo" width="80" height="80" />
-  <img src="https://res.cloudinary.com/dnz16usmk/image/upload/f_auto,q_auto/v1/vd7-website/hume-logo" alt="Logo" width="80" height="80"/>
-
   <h1 align="center">
         Emotional AI Voice Chat
     </h1>
