@@ -9,19 +9,19 @@ import pkg from '@/package.json';
 const icons = [Brain, Heart, Smile, Frown];
 
 export const Nav = () => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isLightMode, setIsLightMode] = useState(false);
   const [EmotionalAIIcon, setEmotionalAIIcon] = useState(Brain);
 
   useEffect(() => {
     const el = document.documentElement;
-    setIsDarkMode(el.classList.contains("dark"));
+    setIsLightMode(el.classList.contains("light"));
     setEmotionalAIIcon(icons[Math.floor(Math.random() * icons.length)]);
   }, []);
 
-  const toggleDark = () => {
+  const toggleLight = () => {
     const el = document.documentElement;
-    el.classList.toggle("dark");
-    setIsDarkMode((prev) => !prev);
+    el.classList.toggle("light");
+    setIsLightMode((prev) => !prev);
   };
 
   return (
@@ -47,18 +47,18 @@ export const Nav = () => {
           <span>Star on GitHub</span>
         </Button>
         <Button
-          onClick={toggleDark}
+          onClick={toggleLight}
           variant="ghost"
           className="ml-auto flex items-center gap-1.5"
         >
           <span>
-            {isDarkMode ? (
-              <Sun className="size-4" />
-            ) : (
+            {isLightMode ? (
               <Moon className="size-4" />
+            ) : (
+              <Sun className="size-4" />
             )}
           </span>
-          <span>{isDarkMode ? "Light" : "Dark"} Mode</span>
+          <span>{isLightMode ? "Dark" : "Light"} Mode</span>
         </Button>
       </div>
     </div>
