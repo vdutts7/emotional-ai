@@ -39,9 +39,6 @@ export default function ClientComponent({
             }
           }, 200);
         }}
-        onStatusChange={(newStatus) => {
-          console.log("VoiceProvider: status changed to", newStatus);
-        }}
         onError={(error) => {
           console.error("VoiceProvider: Error occurred", error);
         }}
