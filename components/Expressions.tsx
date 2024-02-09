@@ -46,7 +46,7 @@ export default function Expressions({
                 backgroundColor: bgColor,
                 opacity: 0.3,
                 borderColor: textColor,
-              } as CSSProperties}
+              }}
             >
               <motion.div
                 className={"absolute top-0 left-0 h-full"}
