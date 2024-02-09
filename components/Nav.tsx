@@ -1,22 +1,20 @@
 "use client";
 
-import { useLayoutEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "./ui/button";
 import { Moon, Sun, Brain, Heart, Smile, Frown } from "lucide-react";
 import Github from "./logos/GitHub";
 
-const getRandomEmotionalAIIcon = () => {
-  const icons = [Brain, Heart, Smile, Frown];
-  return icons[Math.floor(Math.random() * icons.length)];
-};
+const icons = [Brain, Heart, Smile, Frown];
 
 export const Nav = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
-  const EmotionalAIIcon = getRandomEmotionalAIIcon();
+  const [EmotionalAIIcon, setEmotionalAIIcon] = useState(Brain);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     const el = document.documentElement;
     setIsDarkMode(el.classList.contains("dark"));
+    setEmotionalAIIcon(icons[Math.floor(Math.random() * icons.length)]);
   }, []);
 
   const toggleDark = () => {
