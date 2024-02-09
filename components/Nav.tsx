@@ -10,12 +10,12 @@ const icons = [Brain, Heart, Smile, Frown];
 
 export const Nav = () => {
   const [isLightMode, setIsLightMode] = useState(false);
-  const [EmotionalAIIcon, setEmotionalAIIcon] = useState(Brain);
+  const [EmotionalAIIcon, setEmotionalAIIcon] = useState<React.ElementType>(Brain);
 
   useEffect(() => {
     const el = document.documentElement;
     setIsLightMode(el.classList.contains("light"));
-    setEmotionalAIIcon(icons[Math.floor(Math.random() * icons.length)]);
+    setEmotionalAIIcon(icons[Math.floor(Math.random() * icons.length)] as React.ElementType);
   }, []);
 
   const toggleLight = () => {
