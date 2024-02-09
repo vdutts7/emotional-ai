@@ -1,14 +1,15 @@
 import dynamic from "next/dynamic";
+import { getHumeAccessToken } from "@/utils/getHumeAccessToken";
 
 const Chat = dynamic(() => import("@/components/Chat"), {
   ssr: false,
 });
 
 export default async function Page() {
-  const accessToken = process.env.HUME_API_KEY;
+  const accessToken = await getHumeAccessToken();
 
   if (!accessToken) {
-    console.error("HUME_API_KEY is not set in environment variables");
+    console.error("Failed to retrieve Hume access token");
     return <div>Error: Access token not available. Please check your configuration.</div>;
   }
 

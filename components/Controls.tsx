@@ -10,6 +10,8 @@ import { cn } from "@/utils";
 export default function Controls() {
   const { disconnect, status, isMuted, unmute, mute, micFft } = useVoice();
 
+  console.log("Controls: Rendering, status:", status.value);
+
   return (
     <div
       className={

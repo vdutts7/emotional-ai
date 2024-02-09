@@ -23,6 +23,7 @@ export default function ClientComponent({
       <VoiceProvider
         auth={{ type: "accessToken", value: accessToken }}
         onMessage={() => {
+          console.log("VoiceProvider: onMessage called");
           if (timeout.current) {
             window.clearTimeout(timeout.current);
           }
@@ -37,6 +38,12 @@ export default function ClientComponent({
               });
             }
           }, 200);
+        }}
+        onStatusChange={(newStatus) => {
+          console.log("VoiceProvider: status changed to", newStatus);
+        }}
+        onError={(error) => {
+          console.error("VoiceProvider: Error occurred", error);
         }}
       >
         <Messages ref={ref} />
